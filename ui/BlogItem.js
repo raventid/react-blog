@@ -3,12 +3,12 @@ import BoxWrapper from './BoxWrapper.js';
 import Img from './Img.js';
 import TextBox from './TextBox.js';
 
-const BlogItem = (item) => (
+const BlogItem = ({item}) => (
   React.createElement(
     BoxWrapper,
-    { key: item.index },
+    null,
     React.createElement(Img, item.image),
-    React.createElement(TextBox, item)
+    React.createElement(TextBox, {text: item.text})
   )
 );
 

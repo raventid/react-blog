@@ -13,7 +13,7 @@ class BlogPage extends React.Component {
         return React.createElement(
           "div",
           null,
-          items.map(item => (React.createElement(BlogItem, item)))
+          items.map(item => (React.createElement(BlogItem, {key: item.id, item})))
         )
       }
 };

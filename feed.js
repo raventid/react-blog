@@ -1,6 +1,6 @@
 const Items = [
   {
-    index: "1",
+    id: "1",
     text: "First post.",
     image: {
       src: "http://www.hotel-r.net/im/hotel/bg/avangard-14.gif",
@@ -10,7 +10,7 @@ const Items = [
     }
   },
   {
-    index: "2",
+    id: "2",
     text: "Have you ever been to London? No? Try this for free!",
     image: {
       src: "http://www.hotel-r.net/im/hotel/bg/avangard-14.gif",
@@ -20,7 +20,7 @@ const Items = [
     }
   },
   {
-    index: "3",
+    id: "3",
     text: "How I've started my journey with React.js",
     image: {
       src: "http://www.hotel-r.net/im/hotel/bg/avangard-14.gif",
