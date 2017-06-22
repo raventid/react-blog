@@ -1,0 +1,16 @@
+{
+  "name": "react-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:raventid/react-blog.git",
+  "author": "Julian Kulesh <julian.kulesh@kupibilet.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
