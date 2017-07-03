@@ -1,6 +1,7 @@
 import React from 'react';
 
-const TextBox = ({ text }) => (
-  React.createElement("span", {}, text));
+const TextBox = (props) => (
+  <span>{props.children}</span>
+);
 
 export default TextBox;

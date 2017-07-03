@@ -3,19 +3,16 @@ import BlogItem from '../ui/BlogItem.js';
 import Items from '../feed.js'
 
 class BlogPage extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = { Items };
-      }
+  constructor(props) {
+    super(props);
+    this.state = { Items };
+  }
 
-      render() {
-        const { items } = this.state;
-        return React.createElement(
-          "div",
-          null,
-          items.map(item => (React.createElement(BlogItem, {key: item.id, item})))
-        )
-      }
-};
+  render() {
+    const { items } = this.state
+    return <BlogList items={ items } />
+  };
+}
+
 
 export default BlogPage;
