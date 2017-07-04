@@ -1,15 +1,27 @@
 import React from 'react';
-import BoxWrapper from './BoxWrapper.js';
 import Img from './Img.js';
 import TextBox from './TextBox.js';
+import MetaBlock from './MetaBlock.js';
 
-const BlogItem = ({item}) => (
-  React.createElement(
-    BoxWrapper,
-    null,
-    React.createElement(Img, item.image),
-    React.createElement(TextBox, {text: item.text})
-  )
+const BlogItem = ({text, image, meta}) => (
+  <div>
+    <Image {...image} />
+    <div>{text}</div>
+    <MetaBlock {...meta}/>
+    <hr/>
+  </div>
 );
+
+BlogItem.propTypes = {
+  text: PropTypes.string,
+  image: PropTypes.object,
+  meta: PropTypes.object
+};
+
+BlogItem.defaultProps = {
+  text: 'Text is not provided',
+  image: { src: 'http://www.hotel-r.net/im/hotel/bg/avangard-14.gif', alt: 'Empty photo' }
+};
+
 
 export default BlogItem;
