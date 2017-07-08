@@ -1,35 +1,24 @@
-class Like extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: props.count };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  render() {
-    return (
-      <button
-        style={{
-          marginBottom: `10px`,
-          marginLeft: `-2px`,
-          backgroundColor: `#008CBA`,
-          color: `white`}}
-        onClick={this.handleClick}>
-        I like this! [{this.state.count}]
-      </button>
-    );
-  }
-
-  handleClick(e) {
-    this.setState({ count: this.state.count + 1 });
-  }
-}
+const Like = ({likes, like, id}) => (
+  <button
+    style={{
+      marginBottom: `10px`,
+      marginLeft: `-2px`,
+      backgroundColor: `#008CBA`,
+      color: `white`}}
+    onClick={e => like(id)}
+  >
+    I like this! [{likes}]
+  </button>
+)
 
 Like.propTypes = {
-  count: PropTypes.number
+  likes: PropTypes.number,
+  like: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 Like.defaultProps = {
-  count: 0
+  likes: 0
 };
 
 export default Like;

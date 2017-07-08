@@ -9,7 +9,7 @@ const Items = [
       alt: "avangarde"
     },
     meta: {
-      count: 10,
+      likes: 10,
       author: 'url_man',
       created_at: '1998-12-10T11:13:25.541Z',
       updated_at: '1998-12-11T11:13:25.541Z'
@@ -25,7 +25,7 @@ const Items = [
       alt: "avangarde"
     },
     meta: {
-      count: 10,
+      likes: 10,
       author: 'raventid',
       created_at: '1998-12-08T11:13:25.541Z',
       updated_at: '1998-12-09T11:13:25.541Z'
@@ -41,7 +41,7 @@ const Items = [
       alt: "avangarde"
     },
     meta: {
-      count: 100,
+      likes: 100,
       author: 'matz',
       created_at: '1998-12-03T11:13:25.541Z',
       updated_at: '1998-12-05T11:13:25.541Z'

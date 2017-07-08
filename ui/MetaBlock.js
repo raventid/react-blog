@@ -1,8 +1,7 @@
 import Like from "./Like.js"
 
-const MetaBlock = ({created_at, updated_at, author, count}) => (
+const MetaBlock = ({created_at, updated_at, author}) => (
   <div style={{marginTop: `10px`}}>
-    <Like {...{count: count}}/>
     <div style={{fontSize: `11px`}}>Author: {author}</div>
     <div style={{fontSize: `11px`}}>Created at: {created_at}</div>
     <div style={{fontSize: `11px`}}>Updated at: {updated_at}</div>
