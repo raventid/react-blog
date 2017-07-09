@@ -3,10 +3,11 @@ import Img from './Img.js';
 import TextBox from './TextBox.js';
 import MetaBlock from './MetaBlock.js';
 
-const BlogItem = ({text, image, meta}) => (
+const BlogItem = ({id, text, image, meta, like}) => (
   <div>
     <Image {...image} />
     <div>{text}</div>
+    <Like {...{id: id, likes: meta.likes, like: like}}/>
     <MetaBlock {...meta}/>
     <hr/>
   </div>
@@ -15,7 +16,8 @@ const BlogItem = ({text, image, meta}) => (
 BlogItem.propTypes = {
   text: PropTypes.string,
   image: PropTypes.object,
-  meta: PropTypes.object
+  meta: PropTypes.object,
+  like: PropTypes.func
 };
 
 BlogItem.defaultProps = {
