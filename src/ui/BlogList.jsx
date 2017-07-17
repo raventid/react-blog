@@ -1,4 +1,6 @@
-import BlogItem from "./BlogItem.js"
+import React from 'react';
+import BlogItem from "./BlogItem"
+import PropTypes from 'prop-types';
 
 const BlogList = ({items, like}) => (
   <div>

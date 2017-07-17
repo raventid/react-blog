@@ -1,6 +1,7 @@
 import React from 'react';
-import BlogItem from '../ui/BlogItem.js';
-import Items from '../feed.js'
+import BlogList from '../ui/BlogList';
+import PieChart from '../ui/PieChart';
+import items from '../feed'
 import update from 'immutability-helper';
 
 class BlogPage extends React.Component {
@@ -13,6 +14,10 @@ class BlogPage extends React.Component {
   render() {
     const { items } = this.state
     return <div>
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+                <h1>Julian's notes.</h1>
+                <h5>Personal. Tasty. About everything.</h5>
+              </div>
               <BlogList items={ items } like={this.like} />
               <PieChart columns={[ ...items.map( item => [item.text, item.meta.likes]) ]} />
            </div>

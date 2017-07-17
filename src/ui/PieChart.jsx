@@ -1,3 +1,4 @@
+import React from 'react';
 import c3 from 'c3';
 import ReactDOM from 'react-dom';
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import Img from './Img.js';
-import TextBox from './TextBox.js';
-import MetaBlock from './MetaBlock.js';
+import Image from './Img';
+import TextBox from './TextBox';
+import MetaBlock from './MetaBlock';
+import PropTypes from 'prop-types';
+import Like from './Like';
 
 const BlogItem = ({id, text, image, meta, like}) => (
   <div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Image = (props) => (
   <img {...props} />
@@ -16,4 +17,4 @@ Image.defaultProps = {
   height: '100px'
 };
 
-export default Img;
+export default Image;
