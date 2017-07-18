@@ -1,6 +1,7 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import { AppContainer } from 'react-hot-loader';
 
 import App from './App';

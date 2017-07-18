@@ -1,30 +1,30 @@
 import React from 'react';
-import Image from './Img';
-import TextBox from './TextBox';
-import MetaBlock from './MetaBlock';
 import PropTypes from 'prop-types';
+import Image from './Img';
+import MetaBlock from './MetaBlock';
 import Like from './Like';
 
-const BlogItem = ({id, text, image, meta, like}) => (
+const BlogItem = ({ id, text, image, meta, like }) => (
   <div>
     <Image {...image} />
     <div>{text}</div>
-    <Like {...{id: id, likes: meta.likes, like: like}}/>
-    <MetaBlock {...meta}/>
-    <hr/>
+    <Like {...{ id, likes: meta.likes, like }} />
+    <MetaBlock {...meta} />
+    <hr />
   </div>
 );
 
 BlogItem.propTypes = {
+  id: PropTypes.number.isRequired,
   text: PropTypes.string,
-  image: PropTypes.object,
-  meta: PropTypes.object,
-  like: PropTypes.func
+  image: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  meta: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  like: PropTypes.func.isRequired,
 };
 
 BlogItem.defaultProps = {
   text: 'Text is not provided',
-  image: { src: 'http://www.hotel-r.net/im/hotel/bg/avangard-14.gif', alt: 'Empty photo' }
+  image: { src: 'http://www.hotel-r.net/im/hotel/bg/avangard-14.gif', alt: 'Empty photo' },
 };
 
 

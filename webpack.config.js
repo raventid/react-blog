@@ -28,11 +28,8 @@
 
    devServer: {
      hot: true,
-
      contentBase: resolve(__dirname, 'dist'),
-
      disableHostCheck: true,
-
      publicPath: '/'
    },
 
@@ -88,7 +85,6 @@
        }
      }),
 
-     new webpack.HotModuleReplacementPlugin(),
-     new webpack.NamedModulesPlugin()
+     new webpack.HotModuleReplacementPlugin()
    ]
  };
