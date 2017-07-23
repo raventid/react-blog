@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import Image from './Img';
 import MetaBlock from './MetaBlock';
 import Like from './Like';
+import Link from '../elements/Link';
+import { postsPath } from '../routes/paths';
 
 const BlogItem = ({ id, text, image, meta, like }) => (
   <div>
     <Image {...image} />
-    <div>{text}</div>
+    <div><Link to={postsPath(id)}>{text}</Link></div>
     <Like {...{ id, likes: meta.likes, like }} />
     <MetaBlock {...meta} />
     <hr />

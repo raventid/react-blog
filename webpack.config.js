@@ -28,6 +28,7 @@
 
    devServer: {
      hot: true,
+     historyApiFallback: true,
      contentBase: resolve(__dirname, 'dist'),
      disableHostCheck: true,
      publicPath: '/'
