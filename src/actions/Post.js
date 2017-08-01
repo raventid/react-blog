@@ -17,22 +17,6 @@ const receivePost = (response) => ({
   response
 });
 
-const requestLike = (id) => ({
-  type: types.FETCH_LIKE_REQUEST,
-  id
-});
-
-const errorLike = (id) => ({
-  type: types.FETCH_LIKE_ERROR,
-  id
-});
-
-const receiveLike = (id, likes) => ({
-  type: types.FETCH_LIKE_SUCCESS,
-  id,
-  likes
-});
-
 export function fetchPost(id) {
   return (dispatch) => {
     dispatch(requestPost(id));
@@ -41,19 +25,6 @@ export function fetchPost(id) {
       .get(`${API_ROOT}/posts/${id}`)
       .end((err, response) => {
         err ? dispatchEvent(errorPost()) : dispatch(receivePost(response.body));
-      });
-  };
-}
-
-export function like(id) {
-  return (dispatch) => {
-    dispatch(requestLike(id));
-
-    return request
-      .post(`${API_ROOT}/posts/${id}`)
-      .end((err,response) => {
-        err ? dispatchEvent(errorLike()) : dispatch(receiveLike(id,
-          response.body.meta.likes));
       });
   };
 }

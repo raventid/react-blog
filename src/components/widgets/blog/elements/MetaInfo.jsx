@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import styled from 'styled-components';
+import formatTime from 'helpers/views/datetime'
+
+const Body = styled.div`
+  margin-top: 10px;
+`
+
+const Note = styled.div`
+  font-size: 11px;
+`
 
 const MetaInfo = ({ createdAt, updatedAt, author }) => (
-  <div style={{ marginTop: '10px' }}>
-    <div style={{ fontSize: '11px' }}>Author: {author}</div>
-    <div style={{ fontSize: '11px' }}>Created at: { moment(createdAt).format('LL') }</div>
-    <div style={{ fontSize: '11px' }}>Updated at: { moment(updatedAt).format('LL') }</div>
-  </div>
+  <Body>
+    <Note>Author: {author}</Note>
+    <Note>Created at: { formatTime(createdAt) }</Note>
+    <Note>Updated at: { formatTime(updatedAt) }</Note>
+  </Body>
 );
 
 MetaInfo.propTypes = {

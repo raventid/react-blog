@@ -10,14 +10,15 @@ const port = 8080;
 new webpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
+  disableHostCheck: true,
   publicPath: config.output.publicPath,
   stats: {
     colors: true
-  }  
+  }
 }).listen(port, host, (err) => {
   if (err)
     // eslint-disable-next-line no-console
-    console.log(err); 
-  // eslint-disable-next-line no-console  
-  console.log(`Listening at host: ${host} port: ${port}`);  
+    console.log(err);
+  // eslint-disable-next-line no-console
+  console.log(`Listening at host: ${host} port: ${port}`);
 });
