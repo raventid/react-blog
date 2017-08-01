@@ -8,10 +8,10 @@ const Like = ({ likes, like, id }) => (
       marginLeft: '-2px',
       backgroundColor: '#008CBA',
       color: 'white' }}
-    onClick={() => like(id)}
-  >
-    I like this! [{likes}]
-  </button>
+      onClick={() => like(id)}
+    >
+        I like this! [{likes}]
+    </button>
 );
 
 Like.propTypes = {
@@ -25,3 +25,4 @@ Like.defaultProps = {
 };
 
 export default Like;
+
