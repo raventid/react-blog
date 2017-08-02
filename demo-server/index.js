@@ -2,6 +2,7 @@ var express = require('express');
 var application = express();
 
 var items = require('./data').items;
+var methods = require('methods');
 
 var cors = require('cors');
 
@@ -13,6 +14,12 @@ application.get('/', function(req, res) {
 
 application.get('/posts/:id', function(req, res) {
   var itemId = req.params.id - 1;
+  res.json(items[itemId]);
+});
+
+application.post('/posts/:id', function(req, res) {
+  var itemId = req.params.id - 1;
+  items[itemId].meta.likes += 1;
   res.json(items[itemId]);
 });
 

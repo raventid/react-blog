@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  margin-bottom: 10px;
+  margin-left: -2px;
+  background-color: #008CBA;
+  color: white
+`
 
 const Like = ({ likes, like, id }) => (
-  <button
-    style={{
-      marginBottom: '10px',
-      marginLeft: '-2px',
-      backgroundColor: '#008CBA',
-      color: 'white' }}
-    onClick={() => like(id)}
-  >
+  <Button onClick={() => like(id)}>
     I like this! [{likes}]
-  </button>
+  </Button>
 );
 
 Like.propTypes = {
@@ -25,3 +26,4 @@ Like.defaultProps = {
 };
 
 export default Like;
+

@@ -1,91 +1,51 @@
 /* eslint-disable */
- const NODE_ENV = process.env.NODE_ENV || 'development'
+const path = require('path');
 
- var path = require('path');
- const { resolve } = require('path');
+const webpack = require('webpack');
 
- var webpack = require('webpack');
+module.exports = {
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/index.jsx'
+  ],
 
- var root = path.join(process.cwd(), 'src');
+  output: {
+      path: path.join(process.cwd(), 'dist'),
+      publicPath: '/assets/',
+      filename: 'bundle.js'
+  },
 
- module.exports = {
-   context: resolve(__dirname, 'src'),
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?importLoaders=1'
+        ]
+      },
+      { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader' } 
+    ]
+  },
 
-   entry: [
-     'react-hot-loader/patch',
-     'webpack-dev-server/client?http://localhost:8080',
-     'webpack/hot/only-dev-server',
-     "./index.jsx"
-   ],
+  resolve: {
+      extensions: [".js", ".jsx"],
+      modules: [
+          "node_modules",
+          './src',
+          path.resolve(__dirname, "src")
+      ]
+  },
 
-   output: {
-     filename: 'bundle.js',
-     path: resolve(__dirname, 'dist'),
-     publicPath: '/'
-   },
 
-   devtool: 'inline-source-map',
-
-   devServer: {
-     hot: true,
-     historyApiFallback: true,
-     contentBase: resolve(__dirname, 'dist'),
-     disableHostCheck: true,
-     publicPath: '/'
-   },
-
-   module: {
-     rules: [
-       {
-         test: /\.jsx?$/,
-         use: [ "babel-loader", ],
-         exclude: /node_modules/
-       },
-       {
-         test: /\.(woff|woff2)$/,
-         use: {
-           loader: 'url-loader',
-         },
-       }, {
-         test: /\.(html|ttf|eot|svg)$/,
-         use: {
-           loader: 'file-loader',
-         },
-       },
-       {
-         test: /\.css$/,
-         use: [
-           {
-             loader: 'style-loader',
-           },
-           {
-             loader: 'css-loader',
-             options: {
-               importLoaders: 1,
-               sourceMap: true,
-             },
-           },
-         ],
-       },
-     ]
-   },
-
-   resolve: {
-     extensions: [".js", ".jsx"],
-     modules: [
-       "node_modules",
-       './src',
-       path.resolve(__dirname, "dist")
-     ]
-   },
-
-   plugins: [
-     new webpack.DefinePlugin({
-       'process.env': {
-         'NODE_ENV': JSON.stringify(NODE_ENV)
-       }
-     }),
-
-     new webpack.HotModuleReplacementPlugin()
-   ]
- };
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
+};

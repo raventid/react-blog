@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from './Img';
-import MetaBlock from './MetaBlock';
-import Like from './Like';
-import Link from '../elements/Link';
-import { postsPath } from '../routes/paths';
+import Image from './elements/Image';
+import MetaInfo from './elements/MetaInfo';
+import Like from './elements/Like';
+import Link from '../../elements/Link';
+import { postsPath } from 'helpers/routes';
 
-const BlogItem = ({ id, text, image, meta, like }) => (
+const Item = ({ id, text, image, meta, like }) => (
   <div>
     <Image {...image} />
     <div><Link to={postsPath(id)}>{text}</Link></div>
     <Like {...{ id, likes: meta.likes, like }} />
-    <MetaBlock {...meta} />
+    <MetaInfo {...meta} />
+    <div><Link to={'/'}>Back to homepage</Link></div>
     <hr />
   </div>
 );
 
-BlogItem.propTypes = {
+Item.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string,
   image: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -24,10 +25,10 @@ BlogItem.propTypes = {
   like: PropTypes.func.isRequired,
 };
 
-BlogItem.defaultProps = {
+Item.defaultProps = {
   text: 'Text is not provided',
   image: { src: 'http://www.hotel-r.net/im/hotel/bg/avangard-14.gif', alt: 'Empty photo' },
 };
 
 
-export default BlogItem;
+export default Item;
