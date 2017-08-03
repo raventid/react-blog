@@ -1,12 +1,6 @@
 import { connect } from 'react-redux';
 
 import Post from 'components/Post';
-import { like } from 'actions/Like';
-import { flowRight } from 'lodash';
-
-const actionToProps = (dispatch) => ({
-  like: flowRight(dispatch, like)
-});
 
 const stateToProps = (state) => ({
   item: state.post.entry,
@@ -14,4 +8,4 @@ const stateToProps = (state) => ({
   error: state.post.error
 });
 
-export default connect(stateToProps, actionToProps)(Post);
+export default connect(stateToProps)(Post);

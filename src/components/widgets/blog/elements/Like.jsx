@@ -9,8 +9,8 @@ const Button = styled.button`
   color: white
 `
 
-const Like = ({ likes, like, id }) => (
-  <Button onClick={() => like(id)}>
+const Like = ({ likes, like }) => (
+  <Button onClick={() => like()}>
     I like this! [{likes}]
   </Button>
 );
@@ -18,7 +18,6 @@ const Like = ({ likes, like, id }) => (
 Like.propTypes = {
   likes: PropTypes.number,
   like: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
 };
 
 Like.defaultProps = {

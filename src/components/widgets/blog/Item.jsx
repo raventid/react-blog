@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from './elements/Image';
 import MetaInfo from './elements/MetaInfo';
-import Like from './elements/Like';
 import Link from '../../elements/Link';
 import { postsPath } from 'helpers/routes';
+import LikeContainer from 'containers/LikeContainer';
 
-const Item = ({ id, text, image, meta, like }) => (
+const Item = ({ id, text, image, meta }) => (
   <div>
     <Image {...image} />
     <div><Link to={postsPath(id)}>{text}</Link></div>
-    <Like {...{ id, likes: meta.likes, like }} />
+    <LikeContainer postId={id} />
     <MetaInfo {...meta} />
     <div><Link to={'/'}>Back to homepage</Link></div>
     <hr />
@@ -22,7 +22,6 @@ Item.propTypes = {
   text: PropTypes.string,
   image: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   meta: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  like: PropTypes.func.isRequired,
 };
 
 Item.defaultProps = {

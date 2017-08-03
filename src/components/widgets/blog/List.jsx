@@ -4,15 +4,14 @@ import BlogItem from './Item';
 import ChartContainer from 'containers/ChartContainer';
 
 
-const List = ({ items, like }) => (
+const List = ({ items }) => (
     <div>
-        { items.map(item => <BlogItem {...item} key={item.id} like={like} />) }
+        { items.map(item => <BlogItem {...item} key={item.id} />) }
     </div>
 );
 
 List.propTypes = {
     items: PropTypes.arrayOf(PropTypes.object),
-    like: PropTypes.func.isRequired,
 };
 
 List.defaultProps = {

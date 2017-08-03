@@ -1,12 +1,6 @@
 import { connect } from 'react-redux';
 
 import BlogList from 'components/widgets/blog/List';
-import { like } from 'actions/Like';
-import { flowRight } from 'lodash';
-
-const actionToProps = (dispatch) => ({
-  like: flowRight(dispatch, like)
-});
 
 const stateToProps = (state) => ({
   items: state.posts.entries,
@@ -14,4 +8,4 @@ const stateToProps = (state) => ({
   error: state.posts.error
 });
 
-export default connect(stateToProps, actionToProps)(BlogList);
+export default connect(stateToProps)(BlogList);
