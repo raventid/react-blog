@@ -6,7 +6,9 @@ import ChartContainer from 'containers/ChartContainer';
 
 const List = ({ items }) => (
     <div>
-        { items.map(item => <BlogItem {...item} key={item.id} />) }
+      <div>
+          { items.map(item => <BlogItem {...item} key={item.id} />) }
+      </div>
     </div>
 );
 
