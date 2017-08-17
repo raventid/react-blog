@@ -25,10 +25,10 @@ export default function(state = initialState, action) {
       return assign({}, state,
         {
           entries: map(state.entries, (post) => {
-            if (post.id == action.id) {
+            if (post.id == action.response.id) {
               return assign({}, post, {
                 meta: assign({}, post.meta, {
-                  likes: action.likes
+                  likes: action.response.meta.likes
                 })
               });
             }
